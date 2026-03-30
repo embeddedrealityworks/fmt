@@ -19,7 +19,7 @@ fmt_tests   = get_option('fmt_tests')
 
 inc = include_directories('include')
 
-# Per-compiler pedantic flags (mirrors CMakeLists.txt)
+# Per-compiler pedantic flags
 pedantic_flags = []
 if fmt_pedantic
   if cpp.get_id() == 'gcc'
@@ -68,7 +68,7 @@ if not fmt_unicode and host_machine.system() == 'windows' and cpp.get_id() == 'm
   fmt_compile_defs += '-DFMT_UNICODE=0'
 endif
 
-# ── fmt library ──────────────────────────────────────────────────────────────
+# fmt library
 fmt_sources = ['src/format.cc']
 if fmt_os
   fmt_sources += 'src/os.cc'
@@ -91,13 +91,13 @@ fmt_dep = declare_dependency(
   compile_args: fmt_compile_defs,
 )
 
-# ── fmt-header-only (interface / header-only variant) ────────────────────────
+# fmt-header-only (interface / header-only variant)
 fmt_header_only_dep = declare_dependency(
   include_directories: inc,
   compile_args: ['-DFMT_HEADER_ONLY=1'],
 )
 
-# ── fmt-c library (C API wrapper) ────────────────────────────────────────────
+# fmt-c library (C API wrapper)
 fmt_c_extra = []
 if host_machine.system() == 'windows' and cpp.get_id() == 'msvc'
   fmt_c_extra = ['/Zc:preprocessor']
@@ -116,7 +116,7 @@ fmt_c_dep = declare_dependency(
   include_directories: inc,
 )
 
-# ── Install ───────────────────────────────────────────────────────────────────
+# Install
 if fmt_install
   fmt_headers = [
     'include/fmt/args.h',
@@ -146,7 +146,7 @@ if fmt_install
   )
 endif
 
-# ── Tests ─────────────────────────────────────────────────────────────────────
+# Tests
 if fmt_tests
   subdir('test')
 endif
