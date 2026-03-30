@@ -1,0 +1,12 @@
+option('fmt_tests', type: 'boolean', value: true,
+  description: 'Build and run tests')
+option('fmt_install', type: 'boolean', value: true,
+  description: 'Generate install targets')
+option('fmt_os', type: 'boolean', value: true,
+  description: 'Include OS-specific APIs')
+option('fmt_unicode', type: 'boolean', value: true,
+  description: 'Enable Unicode support')
+option('fmt_pedantic', type: 'boolean', value: false,
+  description: 'Enable extra warnings and expensive tests')
+option('fmt_werror', type: 'boolean', value: false,
+  description: 'Treat warnings as errors')
