@@ -10,3 +10,5 @@ option('fmt_pedantic', type: 'boolean', value: false,
   description: 'Enable extra warnings and expensive tests')
 option('fmt_werror', type: 'boolean', value: false,
   description: 'Treat warnings as errors')
+option('fmt_header_only', type: 'boolean', value: false,
+  description: 'Use header-only library')
