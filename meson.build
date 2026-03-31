@@ -2,7 +2,7 @@ project('fmt', 'cpp', 'c',
   version: '12.1.1',
   license: 'MIT',
   default_options: [
-    'cpp_std=c++11',
+    'cpp_std=c++23',
     'warning_level=1',
   ],
   meson_version: '>=1.1.0',
